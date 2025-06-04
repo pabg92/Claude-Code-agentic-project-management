@@ -53,17 +53,35 @@ Working with AI on big projects can get messy. Context gets lost, agents forget 
 This fork adds powerful Claude Code-specific features while maintaining full compatibility with the original APM framework:
 
 ### Key Enhancements:
-- **Slash Commands**: Natural integration with Claude Code's command system (`/apm-init`, `/manager`, `/implement`, etc.)
+- **Automatic Project Loading**: Claude Code automatically loads `CLAUDE.md` when you open a project with APM
+- **Slash Commands**: Natural integration with Claude Code's command system (`/project:apm-init`, `/project:manager`, `/project:implement`, etc.)
 - **Multi-Instance Coordination**: Each Claude Code instance operates as a dedicated agent with role-specific commands
 - **Automated Workflows**: Smart logging, validation, and context management
 - **Enhanced Memory Bank**: File-based persistence with automatic format compliance
 
 ### Quick Start with Claude Code:
-1. **Manager Agent** (Instance 1): `/apm-init manager` → `/manager discover`
-2. **Implementation Agent** (Instance 2): `/apm-init implement` → `/load-task clipboard`
-3. **Automatic Coordination**: Memory Bank keeps all agents synchronized
 
-📖 **[Read the Claude Code Guide](claude-guide.md)** for a complete beginner-friendly walkthrough.
+#### Using CLAUDE.md (Automatic Loading):
+When you open a project containing a `CLAUDE.md` file in Claude Code, it's automatically loaded as project context. This provides Claude with immediate awareness of all available APM commands and workflows.
+
+#### Using Slash Commands:
+The APM framework includes pre-built slash commands in `.claude/commands/` that make complex operations simple:
+
+1. **Manager Agent** (Instance 1): 
+   - Type `/project:apm-init-manager` instead of manually copying the initiation prompt
+   - Type `/project:manager-discover` to start project discovery
+   
+2. **Implementation Agent** (Instance 2): 
+   - Type `/project:apm-init-implement` to initialize as implementation agent
+   - Type `/project:load-task-clipboard` to load a task from clipboard
+
+3. **Benefits of Commands**:
+   - **Faster**: No need to navigate to prompt files and copy content
+   - **Consistent**: Commands ensure you're using the latest version
+   - **Error-free**: Reduces chance of missing important prompt sections
+   - **Context-aware**: Commands can adapt based on project state
+
+📖 **[Read the Claude Code Guide](claude-guide.md)** for a complete beginner-friendly walkthrough with all commands.
 
 ## Getting Started: 
 

@@ -6,11 +6,12 @@ A step-by-step guide to using the Agentic Project Management (APM) framework wit
 1. [What is APM with Claude Code?](#what-is-apm-with-claude-code)
 2. [Prerequisites](#prerequisites)
 3. [Initial Setup](#initial-setup)
-4. [The APM Workflow Loop](#the-apm-workflow-loop)
-5. [Step-by-Step Tutorial](#step-by-step-tutorial)
-6. [Common Scenarios](#common-scenarios)
-7. [Tips for Success](#tips-for-success)
-8. [Troubleshooting](#troubleshooting)
+4. [Understanding CLAUDE.md and Slash Commands](#understanding-claudemd-and-slash-commands)
+5. [The APM Workflow Loop](#the-apm-workflow-loop)
+6. [Step-by-Step Tutorial](#step-by-step-tutorial)
+7. [Common Scenarios](#common-scenarios)
+8. [Tips for Success](#tips-for-success)
+9. [Troubleshooting](#troubleshooting)
 
 ## What is APM with Claude Code?
 
@@ -51,6 +52,85 @@ Before starting, ensure you have:
 2. Label this tab "Manager Agent" (helps keep track!)
 3. Navigate to your project folder
 
+**Important**: If your project has a `CLAUDE.md` file in the root directory, Claude Code automatically loads it. This means:
+- Claude instantly knows all APM commands and workflows
+- No need to manually explain the system
+- Commands work immediately without setup
+
+## Understanding CLAUDE.md and Slash Commands
+
+### What is CLAUDE.md?
+
+CLAUDE.md is a special file that Claude Code automatically loads when you open a project. Think of it as Claude's "instruction manual" for your project. When present, it:
+
+- **Loads automatically**: No need to manually reference it
+- **Provides instant context**: Claude immediately knows all available commands
+- **Defines workflows**: Contains the complete APM system documentation
+
+### Using Slash Commands
+
+APM includes pre-built slash commands that make complex operations simple. These commands are stored in `.claude/commands/` and appear when you type `/project:` in Claude Code.
+
+#### Two Ways to Use Commands:
+
+**1. Traditional Method (Manual):**
+```
+# Navigate to prompts folder
+# Copy entire content of 01_Initiation_Prompt.md
+# Paste into Claude
+```
+
+**2. Slash Command Method (Automatic):**
+```
+/project:apm-init-manager
+```
+
+#### Benefits of Slash Commands:
+
+| Aspect | Manual Method | Slash Commands |
+|--------|---------------|----------------|
+| **Speed** | Navigate → Find → Copy → Paste | Type → Enter |
+| **Accuracy** | Risk of partial copying | Always complete |
+| **Updates** | May use old versions | Always current |
+| **Discovery** | Need to know file locations | Auto-complete helps |
+
+#### Available Command Categories:
+
+**Initialization Commands:**
+- `/project:apm-init-manager` - Initialize as Manager Agent
+- `/project:apm-init-implement` - Initialize as Implementation Agent
+- `/project:apm-init-debug` - Initialize as Debug Agent
+- `/project:apm-init-test` - Initialize as Test Agent
+- `/project:apm-init-review` - Initialize as Review Agent
+
+**Manager Commands:**
+- `/project:manager-discover` - Start project discovery
+- `/project:manager-plan` - Create implementation plan
+- `/project:manager-review` - Review completed work
+- `/project:manager-handover` - Prepare Manager handover
+
+**Implementation Commands:**
+- `/project:implement-start` - Begin task implementation
+- `/project:implement-status` - Report progress
+- `/project:implement-complete` - Complete and log task
+
+**Task Management:**
+- `/project:task-prompt` - Generate task assignment
+- `/project:load-task-clipboard` - Load task from clipboard
+- `/project:load-task-file` - Load task from file
+
+**Memory Bank Commands:**
+- `/project:memory-read` - Read Memory Bank entries
+- `/project:memory-log` - Add to Memory Bank
+- `/project:memory-validate` - Check Memory Bank integrity
+- `/project:memory-sync` - Synchronize Memory Bank
+
+**Utility Commands:**
+- `/project:apm-status` - Check current state
+- `/project:apm-sync` - Synchronize project
+- `/project:apm-context-save` - Save context
+- `/project:apm-context-load` - Load saved context
+
 ## The APM Workflow Loop
 
 Here's how the workflow cycles:
@@ -79,14 +159,29 @@ Here's how the workflow cycles:
 
 **In your Manager Agent tab:**
 
-1. Initialize the Manager role:
+1. Initialize the Manager role (choose one method):
+   
+   **Using Slash Command (Recommended):**
    ```
-   /apm-init manager
+   /project:apm-init-manager
+   ```
+   
+   **Traditional Method:**
+   ```
+   # Copy content from prompts/00_Initial_Manager_Setup/01_Initiation_Prompt.md
+   # Paste into Claude
    ```
    
    Claude responds: "Initialized as Manager Agent for APM project..."
 
 2. Start project discovery:
+   
+   **Using Slash Command:**
+   ```
+   /project:manager-discover
+   ```
+   
+   **Traditional Method:**
    ```
    /manager discover
    ```
@@ -97,6 +192,13 @@ Here's how the workflow cycles:
    - What are your main requirements?
 
 3. Let Claude create the Implementation Plan:
+   
+   **Using Slash Command:**
+   ```
+   /project:manager-plan
+   ```
+   
+   **Traditional Method:**
    ```
    /manager plan
    ```
@@ -110,8 +212,10 @@ Here's how the workflow cycles:
 **Still in Manager Agent tab:**
 
 1. Generate a task assignment:
+   
+   **Using Slash Command:**
    ```
-   /task-prompt task-1.1
+   /project:task-prompt task-1.1
    ```
    
    Claude will output a formatted prompt like:
@@ -133,27 +237,41 @@ Here's how the workflow cycles:
 1. Label this tab "Implementation Agent A"
 2. Navigate to the same project folder
 3. Initialize as Implementation Agent:
+   
+   **Using Slash Command:**
    ```
-   /apm-init implement
+   /project:apm-init-implement
+   ```
+   
+   **Traditional Method:**
+   ```
+   # Copy content from prompts/02_Utility_Prompts_And_Format_Definitions/Implementation_Agent_Onboarding.md
+   # Paste into Claude
    ```
 
 4. Load the task you copied:
+   
+   **Using Slash Command:**
    ```
-   /load-task clipboard
+   /project:load-task-clipboard
    ```
    
    Claude responds with task details and readiness.
 
 5. Start working:
+   
+   **Using Slash Command:**
    ```
-   /implement start
+   /project:implement-start
    ```
    
    Claude begins implementing the task.
 
 6. When done, complete the task:
+   
+   **Using Slash Command:**
    ```
-   /implement complete
+   /project:implement-complete
    ```
    
    This automatically logs the work to Memory Bank.
@@ -163,20 +281,26 @@ Here's how the workflow cycles:
 **Back in your Manager Agent tab:**
 
 1. Sync with latest changes:
+   
+   **Using Slash Command:**
    ```
-   /apm-sync
+   /project:apm-sync
    ```
 
 2. Review the completed work:
+   
+   **Using Slash Command:**
    ```
-   /manager review
+   /project:manager-review
    ```
    
    Claude examines the Memory Bank and provides feedback.
 
 3. Assign the next task:
+   
+   **Using Slash Command:**
    ```
-   /task-prompt task-1.2
+   /project:task-prompt task-1.2
    ```
 
 And the loop continues!
@@ -321,26 +445,28 @@ No problem! Open new Claude Code instance:
 
 ## Quick Reference Card
 
-### Manager Commands
-- `/apm-init manager` - Become Manager
-- `/manager discover` - Start project discovery  
-- `/manager plan` - Create Implementation Plan
-- `/task-prompt <id>` - Generate task assignment
-- `/manager review` - Review completed work
-- `/manager handover` - Prepare handover
+### Manager Commands (Slash Command → Traditional)
+- `/project:apm-init-manager` → `/apm-init manager`
+- `/project:manager-discover` → `/manager discover`
+- `/project:manager-plan` → `/manager plan`
+- `/project:task-prompt` → `/task-prompt <id>`
+- `/project:manager-review` → `/manager review`
+- `/project:manager-handover` → `/manager handover`
 
-### Implementation Commands
-- `/apm-init implement` - Become Implementation Agent
-- `/load-task clipboard` - Load assigned task
-- `/implement start` - Begin work
-- `/implement status` - Report progress
-- `/implement complete` - Finish and log
+### Implementation Commands (Slash Command → Traditional)
+- `/project:apm-init-implement` → `/apm-init implement`
+- `/project:load-task-clipboard` → `/load-task clipboard`
+- `/project:implement-start` → `/implement start`
+- `/project:implement-status` → `/implement status`
+- `/project:implement-complete` → `/implement complete`
 
-### Universal Commands
-- `/apm-sync` - Sync with project
-- `/apm-status` - Check current state
-- `/memory read` - View Memory Bank
-- `/apm-context save` - Save context
+### Universal Commands (Slash Command → Traditional)
+- `/project:apm-sync` → `/apm-sync`
+- `/project:apm-status` → `/apm-status`
+- `/project:memory-read` → `/memory read`
+- `/project:apm-context-save` → `/apm-context save`
+
+**Pro Tip**: Start typing `/project:` in Claude Code to see all available commands with auto-complete!
 
 ## Next Steps
 

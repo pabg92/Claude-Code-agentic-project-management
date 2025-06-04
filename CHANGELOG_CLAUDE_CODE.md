@@ -5,6 +5,38 @@ All notable changes to the APM framework for Claude Code optimization are docume
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2025-01-06
+
+### Added
+
+#### Project-Level Slash Commands
+- **Created `.claude/commands/` directory** with 25 pre-built slash commands
+- **Command Categories**:
+  - Initialization: `/project:apm-init-manager`, `/project:apm-init-implement`, etc.
+  - Manager Operations: `/project:manager-discover`, `/project:manager-plan`, `/project:manager-review`
+  - Implementation: `/project:implement-start`, `/project:implement-complete`
+  - Memory Bank: `/project:memory-read`, `/project:memory-log`, `/project:memory-validate`
+  - Context Management: `/project:apm-context-save`, `/project:apm-context-load`
+  - Synchronization: `/project:apm-sync`, `/project:apm-status`
+
+#### CLAUDE.md Auto-Loading
+- **Automatic Context**: CLAUDE.md is now automatically loaded by Claude Code when present in project root
+- **Instant Awareness**: Claude immediately understands all APM commands and workflows
+- **No Manual Setup**: Users no longer need to manually load or reference the documentation
+
+### Enhanced
+
+#### Command Benefits Over Manual Prompts
+- **Speed**: Direct command execution vs. navigating and copying prompts
+- **Consistency**: Commands always use the latest prompt versions
+- **Error Prevention**: No risk of partial prompt copying or missing sections
+- **Discoverability**: Commands appear in Claude Code's slash command menu
+
+#### User Experience Improvements
+- **Simplified Onboarding**: New users can start with commands immediately
+- **Reduced Cognitive Load**: No need to remember file locations or prompt structures
+- **Faster Workflow**: Common operations are now single commands
+
 ## [1.1.0] - 2025-01-06
 
 ### Changed (Major Revision)
