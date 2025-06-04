@@ -1,8 +1,10 @@
-# Agentic Project Management (APM)
+# Agentic Project Management (APM) - Claude Code Enhanced
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Version](https://img.shields.io/badge/version-v0.3.0-blue)](https://github.com/sdi2200262/agentic-project-management/releases/tag/v0.3.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Version](https://img.shields.io/badge/version-v0.3.0-blue)](https://github.com/sdi2200262/agentic-project-management/releases/tag/v0.3.0) [![Claude Code](https://img.shields.io/badge/Claude%20Code-Enhanced-purple)](claude-guide.md)
 
 *Manage complex projects with a team of AI assistants, smoothly and efficiently.*
+
+> **Note**: This is an enhanced fork of the original [Agentic Project Management](https://github.com/sdi2200262/agentic-project-management) framework by [CobuterMan](https://github.com/sdi2200262), specifically optimized for [Claude Code](https://claude.ai/code). All original features are preserved while adding Claude Code-specific slash commands and workflows.
 
 ## What is APM?
 
@@ -46,6 +48,23 @@ Working with AI on big projects can get messy. Context gets lost, agents forget 
 *   **Efficient & Budget-friendly :** APM aims for a balance. It's designed to be streamlined and cost-effective, helping you get great results without "burning" through your tokens or API requests.
 *   **User-Centric Control:** This system puts you in the driver's seat. It emphasizes user guidance and oversight at critical points. If an agent struggles or context limits are hit, APM provides clear solutions like **Handover Protocols** (to smoothly switch to "fresh" agents) and relies on the **Memory Bank System** to keep the entire workflow aligned.
 
+## Claude Code Integration 🚀
+
+This fork adds powerful Claude Code-specific features while maintaining full compatibility with the original APM framework:
+
+### Key Enhancements:
+- **Slash Commands**: Natural integration with Claude Code's command system (`/apm-init`, `/manager`, `/implement`, etc.)
+- **Multi-Instance Coordination**: Each Claude Code instance operates as a dedicated agent with role-specific commands
+- **Automated Workflows**: Smart logging, validation, and context management
+- **Enhanced Memory Bank**: File-based persistence with automatic format compliance
+
+### Quick Start with Claude Code:
+1. **Manager Agent** (Instance 1): `/apm-init manager` → `/manager discover`
+2. **Implementation Agent** (Instance 2): `/apm-init implement` → `/load-task clipboard`
+3. **Automatic Coordination**: Memory Bank keeps all agents synchronized
+
+📖 **[Read the Claude Code Guide](claude-guide.md)** for a complete beginner-friendly walkthrough.
+
 ## Getting Started: 
 
 Here's how to get the core APM framework up and running for your project:
@@ -87,7 +106,12 @@ This README gives you the essentials. For a more in-depth understanding of the A
 *   ⚙️ **[Example Cursor Rules](rules/)** - Optional rules to enhance APM if you're using the Cursor IDE. Check out the `rules/README.md` for how they work.
 *   🖱️ **[Cursor Integration Guide](docs/04_Cursor_Integration_Guide.md)** - Tips for using APM optimally within Cursor, including setting up project-specific rules.
 
-*(Alternatively, you can always browse prompts and docs directly from [here.](https://github.com/sdi2200262/agentic-project-management))*
+### Claude Code Specific Documentation:
+*   📖 **[Claude Code Guide](claude-guide.md)** - Complete beginner's guide with step-by-step instructions
+*   🔧 **[CLAUDE.md](CLAUDE.md)** - Technical reference for Claude Code slash commands and features
+*   📝 **[Changelog](CHANGELOG_CLAUDE_CODE.md)** - Detailed tracking of all Claude Code enhancements
+
+*(For the original APM documentation, visit the [original repository](https://github.com/sdi2200262/agentic-project-management).)*
 
 ## Contributing
 
@@ -98,6 +122,12 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on the code of conduc
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Credits & Attribution
+
+- **Original APM Framework**: Created by [CobuterMan](https://github.com/sdi2200262) - [Original Repository](https://github.com/sdi2200262/agentic-project-management)
+- **Claude Code Integration**: Enhanced by this fork to leverage Claude Code's unique capabilities
+- **Community**: Thanks to all contributors who help improve APM
 
 <p align="center">
   <img src="assets/cobuter-man.png" alt="CobuterMan" width="150"/>
